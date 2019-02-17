@@ -1,0 +1,131 @@
+// Generic //
+%context
+{
+    display: block;
+    overflow: hidden;
+}
+%create
+{
+    content: " ";
+    display: block;
+}
+%background-center
+{
+    @include backgroundSize(cover);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+%background-full
+{
+    @include absoluteLeft(0,0);
+    @include backgroundSize(cover);
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: block;
+    height: 100%;
+    width: 100%;
+    img {
+        display: none;
+    }
+}
+%cancelCenterX
+{
+    left: 0;
+    transform: translate(0,0);
+}
+%cancelCenter
+{
+    left: 0;
+    transform: translate(0,0);
+    top: 0;
+}
+%cancelTransition
+{
+    transition: none !important;
+}
+%centerElement
+{
+    @include absoluteLeft(50%,50%);
+    display: block;
+    transform: translate(-50%,-50%);
+}
+%contentContext
+{
+    margin: 0 auto;
+    max-width: 700px;
+    width: 60vw;
+}
+%formate-svg
+{
+    svg
+    {
+        display: block;
+        height: 100%;
+        width:100%;
+    }
+}
+%height100
+{
+    height: 100vh;
+    .safari.ios10 &,.safari.ios9 &,.safari.ios8 &
+    {
+        height: calc(100vh - 25px)
+    }
+}
+%inline-block
+{
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+}
+%reset-input
+{
+    border-radius: 0;
+    -webkit-appearance: none;
+}
+%reset-button
+{
+    border: 0px none;
+    background: none;
+    padding: 0;
+}
+%visual-100w
+{
+    display: block;
+    height: auto;
+    width: 100%;
+}
+
+// Transitions //
+%transition-background
+{
+    transition: background-color 200ms $easeOutCubic;
+}
+%transition-bordercolor
+{
+    transition: border-color 400ms $easeOutCubic;
+}
+%transition-color
+{
+    transition: color 400ms $easeOutCubic;
+}
+%transition-opacity
+{
+    opacity: 1;
+    transition: opacity 400ms $easeOutCubic;
+}
+
+// Fonts //
+%font-icomoon
+{
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

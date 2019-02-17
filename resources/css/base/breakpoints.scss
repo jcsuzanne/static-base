@@ -1,0 +1,467 @@
+@mixin modern-browsers {
+    .firefox &
+    {
+        @content;
+    }
+}
+
+@mixin oldie {
+    .ie10 &,.ie9 &,.ie8 &,.oldie &
+    {
+        @content;
+    }
+}
+
+@mixin oldie-mainnav-opened {
+    .ie10.mainnav--isOpened &,.ie9.mainnav--isOpened &,.ie8.mainnav--isOpened &,.oldie.mainnav--isOpened &
+    {
+        @content;
+    }
+}
+
+@mixin ie11 {
+    .ie11 &
+    {
+        @content;
+    }
+}
+
+@mixin ie {
+    .ie &
+    {
+        @content;
+    }
+}
+
+@mixin safari {
+    .safari &
+    {
+        @content;
+    }
+}
+
+@mixin edge {
+    .edge &
+    {
+        @content;
+    }
+}
+
+@mixin windows
+{
+    .windows &
+    {
+        @content;
+    }
+}
+
+@mixin windowsff
+{
+    .windows.firefox &
+    {
+        @content;
+    }
+}
+
+@mixin mq-widescreen {
+    @media
+    only screen
+    and (min-width : 1600px)
+    {
+        @content;
+    }
+}
+
+@mixin mq-smallscreen {
+    @media
+    only screen
+    and (max-width : 1300px)
+    {
+        @content;
+    }
+}
+
+@mixin is-sticky {
+    .mainnav--isSticky &
+    {
+        @content;
+    }
+}
+
+@mixin ios-recent
+{
+    .iphone.safari.ios11 &,.iphone.safari.ios10 &,.iphone.safari.ios9 &,.iphone.safari.ios8 &
+    {
+        @content;
+    }
+}
+
+@mixin vs-scroll-context
+{
+    .is-native-scroll.y-scroll &
+    {
+        @content;
+    }
+}
+
+
+@mixin mainnav-opened
+{
+    .mainnav--isOpened &
+    {
+        @content;
+    }
+}
+
+@mixin mainnav-leaving
+{
+    .mainnav--isLeaving &
+    {
+        @content;
+    }
+}
+
+@mixin skin-white
+{
+    .skin--isWhite &
+    {
+        @content;
+    }
+}
+
+@mixin skin-dark
+{
+    .skin--isDark &
+    {
+        @content;
+    }
+}
+
+@mixin env-touch
+{
+    .mobile &,.tablet &
+    {
+        @content;
+    }
+}
+
+@mixin ui-isReady
+{
+    .ui--isReady &
+    {
+        @content;
+    }
+}
+
+
+@mixin fx-isShown
+{
+    .is--shown &
+    {
+        @content;
+    }
+}
+
+@mixin fx-isShownMaster
+{
+    &.is--shown
+    {
+        @content;
+    }
+}
+
+
+@mixin ui--sticky
+{
+    .ui--sticky &
+    {
+        @content;
+    }
+}
+
+@mixin ui--sticky-show
+{
+    .ui--show.ui--sticky &
+    {
+        @content;
+    }
+}
+
+@mixin ui--sticky-mainnavOpened
+{
+    .mainnav--isOpened.ui--sticky &
+    {
+        @content;
+    }
+}
+
+@mixin view--isScrolling
+{
+    .v--isScrolling &
+    {
+        @content;
+    }
+}
+
+
+// From https://css-tricks.com/snippets/css/media-queries-for-standard-devices/
+@mixin mq-tablet
+{
+    @media
+    // ipad
+    only screen
+        and (min-device-width: 768px)
+        and (max-device-width: 1024px)
+        and (-webkit-min-device-pixel-ratio: 1)
+    ,
+    // ipad retina
+    only screen
+        and (min-device-width: 768px)
+        and (max-device-width: 1024px)
+        and (-webkit-min-device-pixel-ratio: 2)
+    ,
+    // nexus
+    screen
+        and (device-width: 601px)
+        and (device-height: 906px)
+        and (-webkit-min-device-pixel-ratio: 1.331)
+        and (-webkit-max-device-pixel-ratio: 1.332)
+    ,
+     // nexus 7 on portrait
+    only screen
+        and (min-device-width: 375px)
+        and (max-device-width: 667px)
+        and (-webkit-min-device-pixel-ratio: 2)
+        and (orientation: portrait)
+    ,
+    // kindle
+    only screen
+        and (min-device-width: 800px)
+        and (max-device-width: 1280px)
+        and (-webkit-min-device-pixel-ratio: 1.5)
+    {
+        @content;
+    }
+}
+
+@mixin mq-tabletportrait
+{
+    @media
+    // ipad
+    only screen
+        and (min-device-width: 768px)
+        and (max-device-width: 1024px)
+        and (-webkit-min-device-pixel-ratio: 1)
+        and (orientation: portrait)
+    ,
+    // ipad retina
+    only screen
+        and (min-device-width: 768px)
+        and (max-device-width: 1024px)
+        and (-webkit-min-device-pixel-ratio: 2)
+        and (orientation: portrait)
+    ,
+    // nexus
+    screen
+        and (device-width: 601px)
+        and (device-height: 906px)
+        and (-webkit-min-device-pixel-ratio: 1.331)
+        and (-webkit-max-device-pixel-ratio: 1.332)
+        and (orientation: portrait)
+    ,
+     // nexus 7 on portrait
+    only screen
+        and (min-device-width: 375px)
+        and (max-device-width: 667px)
+        and (-webkit-min-device-pixel-ratio: 2)
+        and (orientation: portrait)
+    ,
+    // kindle
+    only screen
+        and (min-device-width: 800px)
+        and (max-device-width: 1280px)
+        and (-webkit-min-device-pixel-ratio: 1.5)
+        and (orientation: portrait)
+    {
+        @content;
+    }
+}
+
+@mixin mq-tabletlandscape
+{
+    @media
+    // ipad
+    only screen
+        and (min-device-width: 768px)
+        and (max-device-width: 1024px)
+        and (-webkit-min-device-pixel-ratio: 1)
+        and (orientation: landscape)
+    ,
+    // ipad retina
+    only screen
+        and (min-device-width: 768px)
+        and (max-device-width: 1024px)
+        and (-webkit-min-device-pixel-ratio: 2)
+        and (orientation: landscape)
+    ,
+    // nexus
+    screen
+        and (device-width: 601px)
+        and (device-height: 906px)
+        and (-webkit-min-device-pixel-ratio: 1.331)
+        and (-webkit-max-device-pixel-ratio: 1.332)
+        and (orientation: landscape)
+    ,
+     // nexus 7 on landscape
+    only screen
+        and (min-device-width: 375px)
+        and (max-device-width: 667px)
+        and (-webkit-min-device-pixel-ratio: 2)
+        and (orientation: landscape)
+    ,
+    // kindle
+    only screen
+        and (min-device-width: 800px)
+        and (max-device-width: 1280px)
+        and (-webkit-min-device-pixel-ratio: 1.5)
+        and (orientation: landscape)
+    {
+        @content;
+    }
+}
+
+
+@mixin mq-mobile
+{
+    @media
+    // iphone 4 and 4s
+    only screen
+        and (min-device-width: 320px)
+        and (max-device-width: 480px)
+        and (-webkit-min-device-pixel-ratio: 2)
+    ,
+    // iphone5 and 5s
+    only screen
+        and (min-device-width: 320px)
+        and (max-device-width: 568px)
+        and (-webkit-min-device-pixel-ratio: 2)
+    ,
+    // iphone6
+    only screen
+        and (min-device-width: 375px)
+        and (max-device-width: 667px)
+        and (-webkit-min-device-pixel-ratio: 2)
+    ,
+    // iphone6+
+    only screen
+        and (min-device-width: 414px)
+        and (max-device-width: 736px)
+        and (-webkit-min-device-pixel-ratio: 3)
+    ,
+    // galaxy s5
+    screen
+        and (device-width: 360px)
+        and (device-height: 640px)
+        and (-webkit-device-pixel-ratio: 3)
+    ,
+    // htc one
+    screen
+        and (device-width: 360px)
+        and (device-height: 640px)
+        and (-webkit-device-pixel-ratio: 3)
+    ,
+    // nexus 5
+    screen
+        and (device-width: 360px)
+        and (device-height: 592px)
+        and (-webkit-device-pixel-ratio: 3)
+    {
+        @content;
+    }
+}
+
+@mixin mq-responsiveMobile
+{
+    @media
+    only screen
+    and (max-width: 767px)
+    {
+        @content;
+    }
+}
+
+@mixin mq-responsiveMobileLandscape
+{
+    @media
+    only screen
+    and (max-width: 767px)
+    and (orientation: landscape)
+    {
+        @content;
+    }
+}
+
+
+@mixin mq-responsiveTablet
+{
+    @media
+    only screen
+    and (min-width: 768px)
+    and (max-width: 1024px)
+    ,
+    // tablet wider
+    only screen
+    and (min-device-width: 800px)
+    and (max-device-width: 1280px)
+    and (-webkit-min-device-pixel-ratio: 1.5)
+    {
+        @content;
+    }
+}
+
+@mixin mq-responsiveTabletAndMobile
+{
+    @media
+    only screen
+    and (max-width: 1024px)
+    ,
+    // tablet wider
+    only screen
+    and (max-device-width: 1280px)
+    and (-webkit-min-device-pixel-ratio: 1.5)
+    {
+        @content;
+    }
+}
+
+
+
+@mixin mq-responsiveTabletPortrait
+{
+    @media
+    only screen
+    and (min-width: 768px)
+    and (max-width: 1024px)
+    and (orientation: portrait)
+    ,
+    // tablet wider
+    only screen
+    and (min-device-width: 800px)
+    and (max-device-width: 1280px)
+    and (-webkit-min-device-pixel-ratio: 1.5)
+    and (orientation: portrait)
+    ,
+    only screen
+    and (max-width: 767px)
+    {
+        @content;
+    }
+}
+
+@mixin mq-forceTablet
+{
+    .tablet &
+    {
+        @content;
+    }
+}
