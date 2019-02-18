@@ -1,5 +1,5 @@
 /node_modules/
 /public/build
 npm-debug.log
-#yarn.lock
-#package-lock.json
+yarn.lock
+package-lock.json
